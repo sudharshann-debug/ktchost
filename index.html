@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>kalamtuitioncentre</title>
+  <meta name="description" content="ktcedu.in is temporarily under maintenance. We'll be back soon — admissions@ktcedu.in" />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind custom colors and animation
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ktcblue: '#0f172a',
+            ktcaccent: '#06b6d4',
+            ktcgold: '#f59e0b'
+          },
+          keyframes: {
+            float: {
+              '0%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+              '100%': { transform: 'translateY(0px)' }
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-40rem 0' },
+              '100%': { backgroundPosition: '40rem 0' }
+            }
+          },
+          animation: {
+            float: 'float 6s ease-in-out infinite',
+            shimmer: 'shimmer 2.5s linear infinite'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* small extras */
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    /* decorative circle blur */
+    .glow { filter: blur(50px); opacity: .65; }
+    /* shimmer for button */
+    .btn-shimmer { background-image: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.14), rgba(255,255,255,0.06)); background-size: 200% 100%; }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-ktcblue via-gray-900 to-ktcblue text-gray-100 flex items-center justify-center p-6">
+  <div class="relative max-w-4xl w-full">
+    <!-- Background decorative blobs -->
+    <div aria-hidden="true" class="absolute -left-20 -top-40 w-80 h-80 rounded-full bg-ktcaccent/20 glow animate-float"></div>
+    <div aria-hidden="true" class="absolute -right-24 top-10 w-64 h-64 rounded-full bg-ktcgold/12 glow animate-float" style="animation-delay: 1s"></div>
+
+    <div class="relative bg-gradient-to-tr from-ktcblue/75 to-black/30 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden border border-white/5">
+      <div class="p-8 md:p-12 lg:p-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <!-- Left: Main message -->
+        <div>
+          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">We're polishing our classroom 🔧</h1>
+          <p class="mt-4 text-gray-300">ktcedu.in is temporarily under maintenance while we add new features and get things ready for students. Thank you for your patience — we'll be back soon with an even better learning experience.</p>
+
+          <ul class="mt-6 space-y-3 text-sm text-gray-200">
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-ktcaccent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m4 0h.01M7 20h10M7 4h10"/></svg>
+              <span><strong>Estimated return:</strong> soon — follow our updates below</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-ktcgold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 8 4-16 3 8h4"/></svg>
+              <span><strong>Admissions:</strong> <a href="mailto:founder@ktcdu.in" class="underline hover:text-white">founder@ktcedu.in</a></span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+              <span><strong>General:</strong> <a href="mailto:info@ktcedu.in" class="underline hover:text-white">info@ktcedu.in</a></span>
+            </li>
+          </ul>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="mailto:info@ktcedu.in" class="inline-flex items-center gap-3 px-5 py-3 rounded-xl font-medium shadow-md btn-shimmer hover:scale-[1.01] transition-transform">
+              <svg class="w-5 h-5 text-ktcaccent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m0 0l4-4m-4 4l4 4"/></svg>
+              Contact Us
+            </a>
+            <a href="#" class="inline-flex items-center gap-3 px-5 py-3 rounded-xl font-medium border border-white/10 text-sm hover:bg-white/5 transition">Call: +91 93617 10137</a>
+          </div>
+
+          <!-- small subscribe -->
+          <form class="mt-6 sm:mt-8" onsubmit="event.preventDefault(); alert('Thanks — we will update you at ' + (document.getElementById('subemail').value || 'info@ktcedu.in'))">
+            <label for="subemail" class="sr-only">Email</label>
+            <div class="flex items-center max-w-md gap-2">
+              <input id="subemail" type="email" placeholder="Enter your email for updates" class="flex-1 rounded-lg px-4 py-2 bg-white/5 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-ktcaccent" />
+              <button type="submit" class="px-4 py-2 rounded-lg bg-ktcaccent text-ktcblue font-semibold hover:brightness-105">Notify Me</button>
+            </div>
+          </form>
+
+          <p class="mt-4 text-xs text-gray-400">Tip: Add <em>info@ktcedu.in</em> to your safe senders to receive admission updates.</p>
+        </div>
+
+        <!-- Right: Visual / Illustration -->
+        <div class="flex items-center justify-center">
+          <div class="w-full max-w-sm p-6 rounded-2xl bg-gradient-to-b from-white/3 to-black/20 border border-white/5 shadow-inner">
+            <div class="flex items-center justify-between">
+              <div>
+                <h3 class="text-lg font-bold">Maintenance progress</h3>
+                <p class="text-sm text-gray-300">We're implementing improvements — tracked below</p>
+              </div>
+              <!-- small badge -->
+              <div class="text-xs bg-ktcgold text-ktcblue px-3 py-1 rounded-full font-semibold">Priority</div>
+            </div>
+
+            <!-- progress bar -->
+            <div class="mt-6">
+              <div class="h-4 w-full bg-white/6 rounded-full overflow-hidden">
+                <div id="progress" class="h-full rounded-full bg-gradient-to-r from-ktcaccent to-ktcgold" style="width: 56%"></div>
+              </div>
+              <div class="mt-2 flex justify-between text-xs text-gray-300">
+                <span>56% Complete</span>
+                <span id="eta">ETA: soon</span>
+              </div>
+            </div>
+
+            <!-- playful SVG robot -->
+            <div class="mt-6 flex items-center justify-center">
+              <svg width="160" height="160" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="animate-float">
+                <rect x="30" y="50" width="140" height="90" rx="18" fill="url(#g)" opacity="0.95"/>
+                <circle cx="100" cy="90" r="18" fill="#0f172a" opacity="0.9"/>
+                <rect x="80" y="70" width="40" height="12" rx="6" fill="#fff" opacity="0.85"/>
+                <path d="M70 110c10 8 30 8 40 0" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+                <defs>
+                  <linearGradient id="g" x1="0" x2="1">
+                    <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.18" />
+                    <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.18" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+
+            <div class="mt-4 text-xs text-gray-400">Follow us on WhatsApp for quick updates: <strong class="text-gray-100">9361710137</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer small -->
+      <div class="border-t border-white/5 p-4 text-center text-xs text-gray-400">© <span id="year"></span> KT C Edu — All rights reserved • <a href="mailto:info@ktcedu.in" class="underline hover:text-white">info@ktcedu.in</a></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // small progress demo (non-blocking)
+    (function(){
+      var el = document.getElementById('progress');
+      var pct = 56;
+      function step(){
+        pct += Math.random() * 2 - 0.6; // gentle change
+        pct = Math.max(10, Math.min(98, pct));
+        el.style.width = pct.toFixed(0) + '%';
+        document.getElementById('eta').textContent = 'ETA: ' + (100 - Math.round(pct)) + '% left';
+        setTimeout(step, 2200 + Math.random() * 1800);
+      }
+      setTimeout(step, 2500);
+    })();
+  </script>
+</body>
+</html>
